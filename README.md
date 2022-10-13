@@ -51,6 +51,46 @@
   Explainiation - As I am using PySpark. Scalability depends on the size of cluster and the resources allocated to the jobs.
   Need to understand the size of the data that we might process and accordingly we can assign resources.
   ```
+</dl>
+<dl>
+  <dt><h3>Task 2</h3></dt>
+  <dd><h3>Task 2.1 - Design a workflow to move the user behaviour event data from the application to a backend and provide insights into the data pipelines that you foresee</dd>
+  
+  ```
+  Keeping all the requirements in mind, below architecture would be suitable.
+  ```
+  ![alt text](https://github.com/vishalkashyap95/BDO_DataEngineering_Tasks/blob/master/Design_workflow.jpg?raw=true)
+  
+  <dd><h3>Task 2.2 Explain how the workflow would provide the data to the batch process in Part 1 Algorithm.</h3></dd>
+  
+  ```
+  Explaination - Eventually the data will be stored in datalake(i.e S3). We can directly store the raw data via Kafka to S3 OR via PySpark.
+  - We can use scheduling tools(like Apache Airflow/Apache Nifi) to trigger PySpark jobs which would run on EMR cluster.
+  - These jobs will read data from S3 and write the cleaned and tranformed data back to S3 Or maybe directly to Data warehouse(Redshift) if needed.
+  ```
+  
+  <dd><h3>Task 2.3 Explain any adaptations that your work from Part 1 - Algorithm would need to work as a streaming process.</h3></dd>
+  
+  ```
+  Explaination - Again an added advantage of using PySpark. For this, we can use Kafka and PySpark integration for reading streams of data.
+  Here are the high level steps to process streams of data.
+  - We can read data from Kafka servers by subscribing to particular topic.
+  - Create dataframe.
+  - Use the code in Part 1 for transformation.
+  - keep writing the data datalake(S3) or upserting straight to Redshift if needed.
+  ```
+  
+  <dd><h3>Task 2.4 Explain how your algorithm scales for:</h3></dd>
+  
+  ```
+  Explaination
+  - We can mimic the entire setup on premise as well. But maintaining on prem architecture would give us a headache. 
+    Better to use any cloud platform for this.
+  - Keeping all the components in same VPC and Zone/Region would definetly reduce the latency.
+  - The cloud services are easy to setup, configurable and are autoscalable with few configurations.
+  - Processing of data would be fault taulerant as Spark maintains the lineage graph, and RDDs can be re-build using the graph,
+    so it can retrive lost partitions in terms of failure.
+  ```
   
 </dl>
 
