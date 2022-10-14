@@ -29,7 +29,7 @@
   
   How much time user spent on which flyer by merchants?
   In the below output we can see that, for merchant "2066", user "4e0521677630b9df7d69717098024419179910e1fff66d24a1affbc084b0c91f" 
-  has spent total 196 secs and avg 98 secs on flyer "2009693", on 1st oct 2018. 
+  has spent total 196 secs on flyer "2009693" and avg 98 secs, on 1st oct 2018. 
   This can be use to understand what kind of flyers user spent time on and accordingly we can provide recommendations
   +-----------+--------+--------------------+----------+------------------------+----------------------+
   |merchant_id|flyer_id|             user_id|      date|total_time_spent_in_secs|avg_time_spent_in_secs|
@@ -86,7 +86,7 @@
   Explaination
   - We can mimic the entire setup on premise as well. But maintaining on prem architecture would give us a headache. 
     Better to use any cloud platform for this.
-  - Keeping all the components in same VPC and Zone/Region would definetly reduce the latency.
+  - Keeping all the components in same VPC and Zone/Region would definitely reduce the latency.
   - The cloud services are easy to setup, configurable and are autoscalable with few configurations.
   - Processing of data would be fault taulerant as Spark maintains the lineage graph, and RDDs can be re-build using the graph,
     so it can retrive lost partitions in terms of failure.
@@ -94,4 +94,4 @@
   
 </dl>
 
-## > Definetely, all Python code can be wrapped in classes and methods.
+## > Definitely, all Python code can be wrapped in classes and methods.
