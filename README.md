@@ -72,7 +72,7 @@
   <dd><h3>Task 2.3 Explain any adaptations that your work from Part 1 - Algorithm would need to work as a streaming process.</h3></dd>
   
   ```
-  Explaination - Again an added advantage of using PySpark. For this, we can use Kafka and PySpark integration for reading streams of data.
+  Explaination - Again an added advantage of using PySpark. We can use Kafka and PySpark integration for reading streams of data.
   Here are the high level steps to process streams of data.
   - We can read data from Kafka servers by subscribing to particular topic.
   - Create dataframe.
@@ -88,8 +88,8 @@
     Better to use any cloud platform for this.
   - Keeping all the components in same VPC and Zone/Region would definitely reduce the latency.
   - The cloud services are easy to setup, configurable and are autoscalable with few configurations.
-  - Processing of data would be fault taulerant as Spark maintains the lineage graph, and RDDs can be re-build using the graph,
-    so it can retrive lost partitions in terms of failure.
+  - Processing of data would be fault taulerant as Spark maintains the lineage graph, and RDDs can be re-built using the graph,
+    so it can retrive the lost data in failure.
   ```
   
 </dl>
